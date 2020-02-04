@@ -1,0 +1,83 @@
+public class Solution {
+    public int RomanToInt(string s) {
+        
+        int I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000;
+        int romanToIntegerValue = 0;
+        char temp = '0';
+        foreach(char c in s)
+        {
+           if((c == 'V' || c == 'X') && temp == 'I')
+           {
+             Console.WriteLine("Hi");
+             romanToIntegerValue = romanToIntegerValue - 2;
+           }
+            
+           if((c == 'L' || c == 'C') && temp == 'X')
+           {
+             romanToIntegerValue = romanToIntegerValue - 20;
+           }
+            
+            if((c == 'D' || c == 'M') && temp == 'C')
+           {
+             Console.WriteLine("Hi");
+             romanToIntegerValue = romanToIntegerValue - 200;
+           }
+            
+            if(c == 'I')
+            {
+               romanToIntegerValue += I;
+            }
+            else if(c == 'V')
+            {
+                romanToIntegerValue += V;
+            }
+            else if(c == 'X')
+            {
+                romanToIntegerValue += X;
+            }
+            else if(c == 'L')
+            {
+                romanToIntegerValue += L;
+            }
+            else if(c == 'C')
+            {
+                romanToIntegerValue += C;
+            }
+            else if(c == 'D')
+            {
+                romanToIntegerValue += D;
+            }
+            else if(c == 'M')
+            {
+                romanToIntegerValue += M;
+            }
+            
+            temp = c;
+        }
+        return romanToIntegerValue;
+    }
+}
+
+
+Example 1:
+
+Input: "III"
+Output: 3
+Example 2:
+
+Input: "IV"
+Output: 4
+Example 3:
+
+Input: "IX"
+Output: 9
+Example 4:
+
+Input: "LVIII"
+Output: 58
+Explanation: L = 50, V= 5, III = 3.
+Example 5:
+
+Input: "MCMXCIV"
+Output: 1994
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
