@@ -1,0 +1,43 @@
+public class Solution {
+    public bool IsValid(string s) {
+        int m = s.Length;
+       for(int i = 0; i < m; i++)
+       {
+           Console.WriteLine(s.Length);
+          if(s.Contains("()") || s.Contains("[]") || s.Contains("{}"))
+          {
+              s = s.Replace("()", "");
+              s = s.Replace("[]", "");
+              s = s.Replace("{}", "");
+          }
+       }
+        
+        if(s == "")
+        {
+        return true;
+        }
+        else
+            return false;
+    }
+}
+
+Example 1:
+
+Input: "()"
+Output: true
+Example 2:
+
+Input: "()[]{}"
+Output: true
+Example 3:
+
+Input: "(]"
+Output: false
+Example 4:
+
+Input: "([)]"
+Output: false
+Example 5:
+
+Input: "{[]}"
+Output: true
