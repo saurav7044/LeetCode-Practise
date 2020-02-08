@@ -1,0 +1,15 @@
+public class Solution {
+    public int StrStr(string haystack, string needle) {
+        return = haystack.IndexOf(needle); 
+    }
+}
+
+
+Example 1:
+
+Input: haystack = "hello", needle = "ll"
+Output: 2
+Example 2:
+
+Input: haystack = "aaaaa", needle = "bba"
+Output: -1
