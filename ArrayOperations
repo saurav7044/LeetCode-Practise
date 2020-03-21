@@ -1,0 +1,119 @@
+using System;
+					
+public class Program
+{
+	int[] arr = null;
+	public void Main()
+	{
+		Console.WriteLine("Creating a blank array of size 6...");
+		SingleDimentionalArray(6);
+		
+		Console.WriteLine("Printing the Array...");
+		traverseArray();
+		
+		Console.WriteLine("Inserting a few value in Array...");
+		insert(0,101);
+		insert(1,202);
+		insert(2,303);
+		insert(3,303);
+		insert(4,403);
+		insert(5,503);
+		insert(5,5103);
+		insert(6,603);
+		
+		
+		Console.WriteLine("Accessing the cellnumber...");
+		accessingCell(1);
+		Console.WriteLine("Accessing the cellnumber...");
+		accessingCell(10);
+		
+		searchInArray(101);
+		deleteValueFromArray(3);
+		
+		traverseArray();
+	}
+	public void searchInArray(int valueToSearch)
+	{
+		try
+		{
+			for(int i = 0; i < arr.Length; i++)
+			{
+				if(arr[i] == valueToSearch)
+				{
+					Console.WriteLine("Value found !");
+					Console.WriteLine("Index of " + valueToSearch + " is:"+ i);
+					return;
+				}
+			}
+			Console.WriteLine(valueToSearch + " is not found");
+		}
+		catch(Exception e)
+		{
+			Console.WriteLine("Error while searching value");
+		}
+	}
+	
+	public void deleteValueFromArray(int deleteValueFromThisCell)
+	{
+		try
+		{
+			arr[deleteValueFromThisCell] = 0;
+		}
+		catch(Exception e)
+		{
+			Console.WriteLine("Can't delete value as cell is not in range");
+		}
+	}
+	
+	public void SingleDimentionalArray(int sizeOfArray)
+	{
+		arr = new int[sizeOfArray];
+	}
+	
+	public void traverseArray()
+	{
+		try
+		{
+		  for(int i = 0; i < arr.Length; i++)
+		  {
+			Console.WriteLine(arr[i] + " ");			
+		  }
+		}
+		catch(Exception e)
+		{
+			Console.WriteLine("Array no longer exists !");
+		}
+	}
+	
+	public void insert(int index, int value)
+	{
+		try
+		{
+			if(arr[index] == 0)
+			{
+				arr[index] = value;
+			}
+			else
+			{
+				Console.WriteLine("Cell is already oocupied by another value");
+			}
+		}
+		catch(Exception e)
+		{
+			Console.WriteLine("Invalid index to access array..");
+		}
+	}
+	
+	public void accessingCell(int cellNumber)
+	{
+		try
+		{
+			Console.WriteLine(arr[cellNumber]);
+		}
+		catch(Exception e)
+		{
+			Console.WriteLine("Invalid index to access array !");
+		}
+	}
+	
+}
