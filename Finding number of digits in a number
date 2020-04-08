@@ -1,0 +1,24 @@
+using System;
+					
+public class Program
+{
+	public void Main()
+	{
+		Console.WriteLine("Hello World");
+		int x = countDigit(10440);
+		Console.WriteLine(x);
+	}
+	int countDigit(int n)
+	{
+		int count = 0;
+		while(n != 0)
+		{
+			n = n/10;
+			count++;
+		}
+		return count++;
+	}
+}
+
+Example n = 1235
+output: 4
