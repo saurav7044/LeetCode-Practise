@@ -1,0 +1,32 @@
+using System;
+					
+public class Program
+{
+	public void Main()
+	{
+		int[] arr = {7,10,4,10,6,5,2};
+		leader(arr);
+	}
+	
+	void leader(int[] arr)
+	{
+	 for(int i=0; i < arr.Length;i++)
+	 {
+		 bool flag = false;
+		 for(int j=i+1;j < arr.Length;j++)
+		 {
+			 if(arr[i] <= arr[j])
+			 {
+				flag = true;
+				 break;
+			 }
+		 }
+		  
+		 if(flag == false)
+		 {
+			 Console.WriteLine(arr[i]);
+		 }
+	 }
+		
+	}
+}
