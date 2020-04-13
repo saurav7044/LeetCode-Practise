@@ -1,0 +1,26 @@
+using System;
+					
+public class Program
+{
+	public void Main()
+	{
+		int[] arr = {10,20,20,30,30,30};
+		int index = removeDuplidate(arr);
+		Console.WriteLine(index);
+	}
+	
+	int removeDuplidate(int[] arr1)
+	{
+	 int res = 1;
+		for(int i = 1; i < arr1.Length;i++)
+		{
+			if(arr1[i] != arr1[res-1])
+			{
+				arr1[res] = arr1[i];
+				res++;
+			}
+		}
+		
+	return res;
+	}
+}
