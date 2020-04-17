@@ -1,0 +1,29 @@
+using System;
+					
+public class Program
+{
+	public void Main()
+	{
+		int[] arr = {0,1,1,0,1,1,1,1};
+		int result = maxConsecutive(arr);
+		Console.WriteLine(result);
+	}
+	int maxConsecutive(int[] arr)
+	{
+		int res = 0;
+		int curr = 0;
+		for(int i=0;i< arr.Length;i++)
+		{
+			if(arr[i] == 0)
+			{
+				curr = 0;
+			}
+			else
+			{
+				curr++;
+				res = Math.Max(res, curr);
+			}
+		}
+		return res;
+	}
+}
